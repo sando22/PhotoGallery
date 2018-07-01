@@ -297,3 +297,50 @@ h2 {
 .upload-form button:hover {
     background-color: #111;
 }
+
+/* search.php */
+
+h3 {
+    font-family: arial, sans-serif;
+    font-size: 38px;
+    color: #111;
+    line-height: 50px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+header ul li form {
+    float: left;
+    padding-top: 15px;
+}
+
+header ul li form input {
+    float: left;
+    width: 140px;
+    height: 30px;
+    padding: 0px 10px;
+    margin-right: 10px;
+    border: none;
+    background: #CCCCCC;
+    font-family: arial, sans-serif;
+    font-size: 14px;
+    color: #111;
+    line-height: 33px;
+}
+
+header ul li form button {
+    float: left;
+    width: 60px;
+    height: 30px;
+    margin-right: 10px;
+    border: none;
+    background: #f3f3f3;
+    font-family: arial, sans-serif;
+    font-size: 14px;
+    color: #111;
+    cursor: pointer;
+}
+
+header ul li form button:hover {
+    background: #ccc;
+}

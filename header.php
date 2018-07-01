@@ -15,6 +15,12 @@ session_start();
             <ul>
                 <li><a href="index.php">Home</a></li>
                 <li><a href="upload.php">Upload image</a></li>
+                <li>
+                    <form action="includes/search-inc.php" method="get">
+                        <input type="text" name="search" placeholder="Search...">
+                        <button type="submit" name="submitSearch">Search</button>
+                    </form>
+                </li>
             </ul>
 
             <div class="nav-login">
