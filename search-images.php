@@ -23,11 +23,18 @@ if (isset($_GET['search'])) {
         if (mysqli_num_rows($result) < 1) {
             echo "<h3>There are no images with this tag!</h3>";
         } else {
+
+            echo '
+                <div class="image-wrapper">
+            ';
             while ($row = mysqli_fetch_assoc($result)) {
                 echo '
                     <a href="image.php?img=' . $row['id'] . '"><img src="thumbs/' . $row['resource'] . '"></a>
                 ';
             }
+            echo '
+                </div>
+            ';
         }
     }
 } else {

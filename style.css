@@ -200,6 +200,15 @@ h2 {
     text-align: center;
 }
 
+.image-wrapper img {
+    margin: 1px;
+}
+
+.image-wrapper img:hover {
+    margin: 0;
+    border: 1px solid #f3f3f3;
+}
+
 /* signup.php */
 
 .signup-form {
@@ -347,10 +356,6 @@ header ul li form button:hover {
 
 /* image.php */
 
-div a {
-    float: left;
-}
-
 .image-details button {
     display: block;
     margin: 20px auto;
@@ -366,4 +371,10 @@ div a {
 
 .image-details button:hover {
     background-color: #111;
+}
+
+.main-wrapper > img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
 }

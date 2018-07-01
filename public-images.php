@@ -11,11 +11,19 @@ if (isset($_SESSION['u_id'])) {
 $result = mysqli_query($conn, $getPublicImages);
 
 if (mysqli_num_rows($result) > 0) {
+    echo "<h3>Public uploads:</h3>";
+
+    echo '
+        <div class="image-wrapper">
+    ';
     while ($row = mysqli_fetch_assoc($result)) {
         echo '
               <a href="image.php?img=' . $row['id'] . '"><img src="thumbs/' . $row['resource'] . '"></a>
         ';
     }
+    echo '
+        <div>
+    ';
 } else {
-    echo "<p>There are no public images yet!</p>";
+    echo "<h3>There are no public images yet!</h3>";
 }
