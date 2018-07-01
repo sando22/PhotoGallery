@@ -8,9 +8,12 @@ include_once 'header.php';
 
             <?php
             if (isset($_SESSION['u_id'])) {
-                echo "You are logged in!";
+                include_once "user_images.php";
             }
+
+            include_once "public_images.php";
             ?>
+
         </div>
     </section>
 

@@ -32,9 +32,6 @@ if (isset($_POST['submit'])) {
                 } elseif ($hashPwdCheck == true) {
 //                    Login the user
                     $_SESSION['u_id'] = $row['id'];
-                    $_SESSION['u_name'] = $row['name'];
-                    $_SESSION['u_email'] = $row['email'];
-                    $_SESSION['u_username'] = $row['username'];
 
                     header("Location: ../index.php?login=success");
                     exit();

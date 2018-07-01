@@ -6,8 +6,19 @@ include_once 'header.php';
         <div class="main-wrapper">
             <h2>Upload Image</h2>
 
-            <form action="upload-inc.php" method="post" enctype="multipart/form-data">
+            <form class="upload-form" action="includes/upload-inc.php" method="post" enctype="multipart/form-data">
                 <input type="file" name="file">
+                <input type="text" name="tags" placeholder="#your#tags#here">
+                <?php
+                if (isset($_SESSION['u_id'])) {
+                    echo '
+                    <div>
+                        <label for="public">Public</label>
+                        <input type="checkbox" name="public" placeholder="Public upload">
+                    </div>
+                    ';
+                }
+                ?>
                 <button type="submit" name="submit">UPLOAD</button>
             </form>
         </div>
