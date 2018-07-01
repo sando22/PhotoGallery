@@ -20,7 +20,11 @@ if (isset($_GET['img'])) {
         if (isset($_SESSION['u_id']) && $_SESSION['u_id'] == $row['creator']) {
             echo '
                 <div class="image-details">
-                    <button>Delete</button>
+                    <form action="includes/delete-inc.php" method="post">
+                        <input type="hidden" name="imageId" value="' . $row['id'] . '" />
+                        <input type="hidden" name="imageResource" value="' . $row['resource'] . '" />
+                        <button type="submit" name="delete">DELETE</button>
+                    </form>
                 </div>
             ';
         }
