@@ -344,3 +344,26 @@ header ul li form button {
 header ul li form button:hover {
     background: #ccc;
 }
+
+/* image.php */
+
+div a {
+    float: left;
+}
+
+.image-details button {
+    display: block;
+    margin: 20px auto;
+    width: 30%;
+    height: 40px;
+    border: none;
+    background: #222;
+    font-family: arial, sans-serif;
+    font-size: 16px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.image-details button:hover {
+    background-color: #111;
+}

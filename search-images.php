@@ -8,7 +8,7 @@ if (isset($_GET['search'])) {
     } else {
         $tag = $_GET['search'];
 
-        $sql = "select * from images where id in (select image_id from tag_to_image where tag_id in (select id from tags where label = '$tag')) and (public = 1";
+        $sql = "select id, resource from images where id in (select image_id from tag_to_image where tag_id in (select id from tags where label = '$tag')) and (public = 1";
 
         if (isset($_SESSION['u_id'])) {
             $u_id = $_SESSION['u_id'];
@@ -25,7 +25,7 @@ if (isset($_GET['search'])) {
         } else {
             while ($row = mysqli_fetch_assoc($result)) {
                 echo '
-                    <img src="uploads/' . $row['resource'] . '">
+                    <a href="image.php?img=' . $row['id'] . '"><img src="uploads/' . $row['resource'] . '"></a>
                 ';
             }
         }
