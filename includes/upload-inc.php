@@ -36,6 +36,8 @@ if (isset($_POST['submit'])) {
 
                 move_uploaded_file($fileTmpName, $fileDestination);
 
+                include_once 'generate-thumb-inc.php';
+
                 header("Location: ../index.php?upload=success");
                 exit();
             } else {

@@ -25,7 +25,7 @@ if (isset($_GET['search'])) {
         } else {
             while ($row = mysqli_fetch_assoc($result)) {
                 echo '
-                    <a href="image.php?img=' . $row['id'] . '"><img src="uploads/' . $row['resource'] . '"></a>
+                    <a href="image.php?img=' . $row['id'] . '"><img src="thumbs/' . $row['resource'] . '"></a>
                 ';
             }
         }

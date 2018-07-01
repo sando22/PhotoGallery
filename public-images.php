@@ -13,7 +13,7 @@ $result = mysqli_query($conn, $getPublicImages);
 if (mysqli_num_rows($result) > 0) {
     while ($row = mysqli_fetch_assoc($result)) {
         echo '
-              <a href="image.php?img=' . $row['id'] . '"><img src="uploads/' . $row['resource'] . '"></a>
+              <a href="image.php?img=' . $row['id'] . '"><img src="thumbs/' . $row['resource'] . '"></a>
         ';
     }
 } else {

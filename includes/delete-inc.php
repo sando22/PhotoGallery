@@ -7,24 +7,21 @@ if (isset($_POST['delete']) && isset($_POST['imageId'])) {
     $imageId = $_POST['imageId'];
     $imageResource = $_POST['imageResource'];
 
-    if (!unlink("../uploads" . $imageResource)) {
-        echo '
-            <p>File was not deleted!</p>
-        ';
+    if (!unlink("../uploads/" . $imageResource)) {
+        header("Location: ../index.php?delete=fail");
+        exit();
     } else {
-        echo '
-            <p>File was deleted!</p>
-        ';
+        unlink("../thumbs/" . $imageResource);
+
+        $deleteImage = "delete from images where id = '$imageId'";
+        $deleteTagsRelations = "delete from tag_to_image where image_id = '$imageId'";
+
+        mysqli_query($conn, $deleteImage);
+        mysqli_query($conn, $deleteTagsRelations);
+
+        header("Location: ../index.php?delete=success");
+        exit();
     }
-
-    $deleteImage = "delete from images where id = '$imageId'";
-    $deleteTagsRelations = "delete from tag_to_image where image_id = '$imageId'";
-
-    mysqli_query($conn, $deleteImage);
-    mysqli_query($conn, $deleteTagsRelations);
-
-    header("Location: ../index.php?delete=success");
-    exit();
 } else {
     header("Location: ../index.php");
     exit();

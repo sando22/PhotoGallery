@@ -1,5 +1,13 @@
 <?php
 session_start();
+
+if (is_dir('./thumbs') === false) {
+    mkdir('./thumbs', 0744);
+}
+
+if (is_dir('./uploads') === false) {
+    mkdir('./uploads', 0744);
+}
 ?>
 <!DOCTYPE html>
 <html>
